@@ -1,0 +1,16 @@
+{% extends 'event_social_network/base.html' %}
+{% block title %}Search Results{% endblock %}
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+        <h1>Search Results for "{{ query }}"</h1>
+        <ul>
+            {% for user in search_results %}
+                <li>{{ user.username }}</li>
+         {% empty %}
+                <li>No users found</li>
+            {% endfor %}
+        </ul>
+{% endblock %}

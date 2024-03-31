@@ -1,0 +1,17 @@
+{% extends "event_social_network/base.html" %}
+{% block content %}
+    {% if events %}
+        <h1>All Events</h1>
+        <ul class="list-group">
+            {% for event in events %}
+                <li>
+                    {{ event.title }} - {{ event.date }} - {{ event.time }} - {{ event.location }}
+                </li>
+            {% empty %}
+                <li>No events found</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="card-text">No events found.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "event_social_network/base.html" %}
+{% block title %}All Events{% endblock %}
+
+{% block content %}
+  <h1>All Events</h1>
+  <ul>
+    {% for event in events %}
+      <li>{{ event.title }} - {{ event.date }} - {{ event.time }} - {{ event.location }}</li>
+      <a href="{% url 'edit_event' event.id %}">Edit</a>
+      <a href="{% url 'delete_event' event.id %}">Delete</a>
+    {% empty %}
+      <li>No events found</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

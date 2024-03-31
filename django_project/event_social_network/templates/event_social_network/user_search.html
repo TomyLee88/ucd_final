@@ -1,0 +1,13 @@
+{% extends 'event_social_network/base.html' %}
+{% block title %}User Search{% endblock %}
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+    <h1>User Search</h1>
+    <form method="get">
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+{% endblock %}
